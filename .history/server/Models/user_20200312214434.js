@@ -23,10 +23,6 @@ var UserSchema = new mongoose.Schema(
                         type: String,
                         required: true
                 },
-                subscription : {
-                        type: Boolean,
-                        required: true
-                }
         });
 
 var User = mongoose.model("User", UserSchema);

@@ -6,10 +6,6 @@ var user = require('./Models/user');
 var bodyParser = require('body-parser')
 const port = 8180
 const cors = require('cors');
-app.use(cors());
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // app.use(bodyParser.json());
 // app.use(express.urlencoded());

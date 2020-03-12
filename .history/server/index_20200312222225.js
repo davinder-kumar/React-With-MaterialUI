@@ -45,7 +45,7 @@ app.post("/signup", (req, res) => {
     // userData.password = ""
     // userData.subscription = ""
     console.log(req.body)
-    res.send(req.body)
+    res.send(req)
 
 })
 
