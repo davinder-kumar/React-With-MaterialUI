@@ -35,13 +35,12 @@ app.get("/",(req,res)=>{
     const userSave= new user(userD)
     userSave.save((error,user)=>{
         if(error){
-            return res.send(error)
+            console
         }else{
-            return res.send(user)
+            res.json({status :0})
         }
 
     })
-    
     // return res.json({'Hello':req.body.x})
 })
 

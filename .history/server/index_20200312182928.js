@@ -32,17 +32,7 @@ app.get("/",(req,res)=>{
     userD.username = "Davinder"
     userD.email = "Davinder"
     userD.password = "Davinder"
-    const userSave= new user(userD)
-    userSave.save((error,user)=>{
-        if(error){
-            return res.send(error)
-        }else{
-            return res.send(user)
-        }
-
-    })
-    
-    // return res.json({'Hello':req.body.x})
+    return res.json({'Hello':req.body.x})
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

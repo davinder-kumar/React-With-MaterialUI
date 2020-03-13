@@ -35,9 +35,9 @@ app.get("/",(req,res)=>{
     const userSave= new user(userD)
     userSave.save((error,user)=>{
         if(error){
-            return res.send(error)
+            return res.send('Hello')
         }else{
-            return res.send(user)
+            return res.send('Hello')
         }
 
     })

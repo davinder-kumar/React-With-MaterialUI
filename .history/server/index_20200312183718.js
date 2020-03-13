@@ -37,7 +37,7 @@ app.get("/",(req,res)=>{
         if(error){
             return res.send(error)
         }else{
-            return res.send(user)
+            return res.send('Hello')
         }
 
     })
