@@ -79,7 +79,7 @@ const SignUp = (props) => {
         axios.post('/signup', formPayload)
             .then(function (response) {
                 changeLoadingSts(false)
-                props.history.push(routes.signin)
+                console.log(props)
             })
             .catch(function (error) {
                 changeLoadingSts(false)

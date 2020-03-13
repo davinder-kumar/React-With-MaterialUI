@@ -40,8 +40,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SignUp = (props) => {
-    const [loadingStaus, changeLoadingSts] = useState(false)
+const SignUp = () => {
+
     const [formData, setFormData] = useState({
         fname: {
             value: null
@@ -79,7 +79,7 @@ const SignUp = (props) => {
         axios.post('/signup', formPayload)
             .then(function (response) {
                 changeLoadingSts(false)
-                props.history.push(routes.signin)
+                console.log(response);
             })
             .catch(function (error) {
                 changeLoadingSts(false)
@@ -156,7 +156,6 @@ const SignUp = (props) => {
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
-                            {loadingStaus ? <Loader /> : null}
                         </Grid>
                     </Grid>
                     <Button
@@ -184,4 +183,4 @@ const SignUp = (props) => {
         </Container>
     );
 }
-export default withErrorHoc(SignUp, axios)
+export default withErrorHoc(SignUp,axios)

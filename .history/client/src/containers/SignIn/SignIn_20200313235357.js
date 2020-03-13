@@ -16,7 +16,7 @@ import Container from '@material-ui/core/Container';
 import { updateObject } from '../../Utilities/Utilities'
 import Copyright from '../../components/Copyright/Copyright'
 import { Link } from 'react-router-dom'
-import { routes } from '../../routes'
+import {routes} from '../../routes'
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -27,9 +27,8 @@ const SignIn = () => {
       value: null
     }
   }
+  const [loadingStaus, changeLoadingSts] = useState(false)
   )
-  
-
   const classes = useStyles();
 
 
@@ -106,7 +105,7 @@ const SignIn = () => {
             </Grid>
             <Grid item>
               <Link to={routes.signup} exact="true" >Don't have an account? Sign Up</Link>
-
+              
             </Grid>
           </Grid>
         </form>

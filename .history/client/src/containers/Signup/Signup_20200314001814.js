@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SignUp = (props) => {
+const SignUp = () => {
     const [loadingStaus, changeLoadingSts] = useState(false)
     const [formData, setFormData] = useState({
         fname: {
@@ -79,7 +79,6 @@ const SignUp = (props) => {
         axios.post('/signup', formPayload)
             .then(function (response) {
                 changeLoadingSts(false)
-                props.history.push(routes.signin)
             })
             .catch(function (error) {
                 changeLoadingSts(false)

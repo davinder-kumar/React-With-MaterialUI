@@ -1,12 +1,12 @@
 // import Button from 'react-bootstrap/Button';
-import React  from 'react'
+import React, { Fragment } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const modal = (props) => {
     console.log(props.show)
-    return (<>
+    return (<Fragment>
         <Modal
             show={props.show}
             onHide={props.onHide}
@@ -18,7 +18,7 @@ const modal = (props) => {
             </Modal.Body>
            
         </Modal>
-    </>
+    </Fragment>
     )
 }
 
