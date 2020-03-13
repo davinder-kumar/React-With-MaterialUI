@@ -5,19 +5,8 @@ const db = require('./db/db');
 var user = require('./Models/user');
 var bodyParser = require('body-parser')
 const port = 8180
-const cors = require('cors');
-app.use(cors());
+app.use(bodyParser());
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// app.use(bodyParser.json());
-// app.use(express.urlencoded());
-// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-//     extended: true
-// }));
-// app.use(express.json());       // to support JSON-encoded bodies
-// app.use(express.urlencoded()); // to support URL-encoded bodies
 // app.post("/register", (req, res) => {
 //     let d = {}
 //     d.name = "SHubham";
@@ -36,7 +25,7 @@ app.use(bodyParser.json());
 //     res.send('Hello')
 // })
 
-app.post("/signup", (req, res) => {
+app.get("/signup", (req, res) => {
     // const userData = {}
     // userData.firstname = ""
     // userData.lastname = ""
@@ -45,8 +34,8 @@ app.post("/signup", (req, res) => {
     // userData.password = ""
     // userData.subscription = ""
     console.log(req.body)
-    res.send(req.body)
-
+    res.send("das")
+    
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
