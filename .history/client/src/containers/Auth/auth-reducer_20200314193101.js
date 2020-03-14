@@ -1,0 +1,14 @@
+import * as actionTypes from '../../redux-store/actionTypes'
+
+const initialState = {
+    loading: false,
+    userId : null,
+    token: null
+}
+
+const AuthReducer = (state=initialState, action)=>{
+    switch(action.type){
+        case 'SIGNIN'
+    }
+}
+export default AuthReducer

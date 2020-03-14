@@ -13,13 +13,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from '../../components/Copyright/Copyright'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from '../../axios-auth'
 import { routes } from '../../routes'
 import { updateObject } from '../../Utilities/Utilities'
 import withErrorHoc from '../../hoc/withErrorHoc/withErrorHoc'
 import Loader from '../../components/UI/Loader/Loader'
-
+import { connect } from 'react-redux'
+import * as actionsList from '../../redux-store/actionsList'
 const useStyles = makeStyles(theme => ({
     paper: {
         marginTop: theme.spacing(8),
@@ -41,7 +42,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SignUp = (props) => {
-    const [loadingStaus, changeLoadingSts] = useState(false)
     const [formData, setFormData] = useState({
         firstname: {
             value: null
@@ -70,7 +70,6 @@ const SignUp = (props) => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault()
-        changeLoadingSts(true)
         const formPayload = {}
         for (let i in formData) {
             formPayload[i] = formData[i].value
@@ -79,20 +78,15 @@ const SignUp = (props) => {
             }
         }
         formPayload.subscription = true
-        axios.post('/users', formPayload)
-            .then(function (response) {
-                changeLoadingSts(false)
-                props.history.push(routes.signin)
-            })
-            .catch(function (error) {
-                changeLoadingSts(false)
-            });
+        props.onAuthStart(formPayload)
     }
 
     const classes = useStyles();
 
     return (
+        <>
         <Container component="main" maxWidth="xs">
+            
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
@@ -158,7 +152,7 @@ const SignUp = (props) => {
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
-                            {loadingStaus ? <Loader /> : null}
+                            {props.loading ? <Loader /> : null}
                         </Grid>
                     </Grid>
                     <Button
@@ -184,6 +178,17 @@ const SignUp = (props) => {
                 <Copyright />
             </Box>
         </Container>
+    </>
     );
 }
-export default withErrorHoc(SignUp, axios)
+const mapStateToProps = state => {
+    return {
+        loading : state.auth.loading
+    }
+}
+const mapDispatchToProps = dispatch =>{
+    return {
+        onAuthStart : (formPayload) => dispatch(actionsList.authSignupInit(formPayload))
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(withErrorHoc(SignUp, axios))

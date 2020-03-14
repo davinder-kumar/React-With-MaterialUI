@@ -1,0 +1,1 @@
+export {  authSignupInit } from '../containers/Auth/auth-actions'
