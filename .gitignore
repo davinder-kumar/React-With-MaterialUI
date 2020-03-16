@@ -3,7 +3,7 @@
 # dependencies
 /client/node_modules
 /client/.pnp
-/client.pnp.js
+/client/.pnp.js
 
 # testing
 /client/coverage
@@ -12,15 +12,16 @@
 /client/build
 
 # misc
-/client.DS_Store
-/client.env.local
-/client.env.development.local
-/client.env.test.local
-/client.env.production.local
+/client/.DS_Store
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
 
-/clientnpm-debug.log*
-/clientyarn-debug.log*
-/clientyarn-error.log*
-
+/clien/tnpm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+/client/.history
+/server/.history
 
 /server/node_modules
