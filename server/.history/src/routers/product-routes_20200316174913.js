@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const product = require("../models/Products")
 const auth = require('../middleware/auth')
-router.post("/addproduct",auth, async (req, res) => {
+router.post("/addproduct", async (req, res) => {
     // console.log("addproducts",req)
     try {
         console.log(req.body)
