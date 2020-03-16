@@ -23,5 +23,5 @@
 /client/yarn-error.log*
 /client/.history
 /server/.history
-
+/.history
 /server/node_modules
