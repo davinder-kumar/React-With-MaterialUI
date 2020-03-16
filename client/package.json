@@ -2,6 +2,7 @@
   "name": "material-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/shopping-cart",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",

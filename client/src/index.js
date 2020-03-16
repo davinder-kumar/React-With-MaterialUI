@@ -28,7 +28,7 @@ const store = createStore(rootReducer,
 sagaMiddleware.run(authSagaWatcher)
 const app = (
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename="shopping-cart">
             <App />
         </BrowserRouter>
     </Provider>);
