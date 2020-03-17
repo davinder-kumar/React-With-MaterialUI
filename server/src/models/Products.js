@@ -17,9 +17,14 @@ const Schema = mongoose.Schema({
         required: true,
         type: String
     },
-    date: {
+    created_at: {
         type: Date,
         default: Date.now
+    },
+    is_new : {
+        type : Boolean,
+        required: true,
+        default : false
     }
 
 })

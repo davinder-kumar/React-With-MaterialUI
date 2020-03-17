@@ -11,16 +11,16 @@ const footer = () => {
                         sit amet, consectetur, adipisci velit, sed quia non
                 numquam eius modi tempora.</p>
                         <ul className="social-nav model-3d-0 footer-social w3_agile_social two">
-                            <li><a href="#" className="facebook">
+                            <li><a href="/" className="facebook">
                                 <div className="front"><i className="fa fa-facebook" aria-hidden="true"></i></div>
                                 <div className="back"><i className="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-                            <li><a href="#" className="twitter">
+                            <li><a href="/" className="twitter">
                                 <div className="front"><i className="fa fa-twitter" aria-hidden="true"></i></div>
                                 <div className="back"><i className="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-                            <li><a href="#" className="instagram">
+                            <li><a href="/" className="instagram">
                                 <div className="front"><i className="fa fa-instagram" aria-hidden="true"></i></div>
                                 <div className="back"><i className="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-                            <li><a href="#" className="pinterest">
+                            <li><a href="/" className="pinterest">
                                 <div className="front"><i className="fa fa-linkedin" aria-hidden="true"></i></div>
                                 <div className="back"><i className="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
                         </ul>
@@ -97,7 +97,7 @@ const footer = () => {
                             <h3>SIGN UP FOR NEWSLETTER !</h3>
                         </div>
                         <div className="col-sm-6 newsright">
-                            <form action="#" method="post">
+                            <form action="/" method="post">
                                 <input type="email" placeholder="Enter your email..." name="email" required="" />
                                 <input type="submit" value="Submit" />
                             </form>
@@ -160,7 +160,7 @@ const footer = () => {
                                                 <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Password';
                                             }" required="" />
-                                                <a href="#">Forgot password?</a>
+                                                <a href="/">Forgot password?</a>
                                             </div>
                                             <div className="single-bottom">
                                                 <input type="checkbox" id="brand" value="" />
@@ -173,13 +173,13 @@ const footer = () => {
                                     </div>
                                     <div className="clearfix"></div>
                                 </div>
-                                <p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+                                <p>By logging in you agree to our <a href="/">Terms and Conditions</a> and <a href="/">Privacy Policy</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#home" className="scroll" id="toTop" style={{ display: 'block'}}> <span id="toTopHover" style={{ opacity: "1"}} > </span></a>
+            <a href="/home" className="scroll" id="toTop" style={{ display: 'block'}}> <span id="toTopHover" style={{ opacity: "1"}} > </span></a>
 
         </>
     )

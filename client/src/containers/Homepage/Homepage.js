@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import NewArrivals from '../../components/NewArrivals/NewArrivals'
 import Coupons from '../../components/Coupons/Coupons'
 const Homepage = () => {

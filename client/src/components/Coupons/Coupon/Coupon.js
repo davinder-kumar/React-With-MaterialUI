@@ -1,5 +1,5 @@
 import React from 'react'
-import coupons from '../Coupons'
+// import coupons from '../Coupons'
 
 const coupon = () => {
     return (
