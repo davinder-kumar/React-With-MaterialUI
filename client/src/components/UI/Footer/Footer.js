@@ -123,19 +123,19 @@ const footer = () => {
                                         <form>
                                             <div className="sign-up">
                                                 <h4>Email :</h4>
-                                                <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                <input type="text" value="Type here" onFocus="this.value = '';" onBlur="if (this.value == '') {
                                                 this.value = 'Type here';
                                             }" required="" />
                                             </div>
                                             <div className="sign-up">
                                                 <h4>Password :</h4>
-                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
                                                 this.value = 'Password';}" required="" />
 
                                             </div>
                                             <div className="sign-up">
                                                 <h4>Re-type Password :</h4>
-                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
                                                 this.value = 'Password';
                                             }" required="" />
 
@@ -151,13 +151,13 @@ const footer = () => {
                                         <form>
                                             <div className="sign-in">
                                                 <h4>Email :</h4>
-                                                <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                <input type="text" value="Type here" onFocus="this.value = '';" onBlur="if (this.value == '') {
                                                 this.value = 'Type here';
                                             }" required="" />
                                             </div>
                                             <div className="sign-in">
                                                 <h4>Password :</h4>
-                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
                                                 this.value = 'Password';
                                             }" required="" />
                                                 <a href="/">Forgot password?</a>

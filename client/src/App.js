@@ -13,16 +13,18 @@ const App = (props) => {
   }
   return (
     <div>
-      <Switch>
-        <Route path="/signin" component={Signin} />
-        <Route path="/signup" component={Signup} />
-        {/* Layout only for frontend routes */}
-        <Layout>
-          <Route path="/" component={Homepage} />
-        </Layout>
+      <React.StrictMode>
+        <Switch>
+          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={Signup} />
+          {/* Layout only for frontend routes */}
+          <Layout>
+            <Route path="/" component={Homepage} />
+          </Layout>
 
-        <Redirect to="/signin" />
-      </Switch>
+          <Redirect to="/signin" />
+        </Switch>
+      </React.StrictMode>
     </div>
   );
 }

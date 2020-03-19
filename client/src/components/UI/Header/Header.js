@@ -172,7 +172,7 @@ const header = () => {
                     <Carousel.Caption className="carousel-caption">
                         <h3>The Biggest <span>Sale</span></h3>
                         <p>Special for today</p>
-                        <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+                        <a className="hvr-outline-out button2" href="mens.html">Shop Now </a>
                     </Carousel.Caption>
                 </div>
             </Carousel.Item>
@@ -182,7 +182,7 @@ const header = () => {
                     <Carousel.Caption className="carousel-caption">
                         <h3>Summer <span>Collection</span></h3>
                         <p>New Arrivals On Sale</p>
-                        <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+                        <a className="hvr-outline-out button2" href="mens.html">Shop Now </a>
                     </Carousel.Caption>
                 </div>
             </Carousel.Item >
@@ -192,7 +192,7 @@ const header = () => {
                     <Carousel.Caption className="carousel-caption">
                         <h3>The Biggest <span>Sale</span></h3>
                         <p>Special for today</p>
-                        <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+                        <a className="hvr-outline-out button2" href="mens.html">Shop Now </a>
                     </Carousel.Caption>
                 </div>
             </Carousel.Item>

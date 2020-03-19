@@ -37,7 +37,8 @@ $(document).ready(function ($) {
     $(".scroll").click(function (event) {
         // console.log("dsd")
         event.preventDefault();
-        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+        console.log($(this.hash))
+        $('html,body').animate({ scrollTop: $("body").offset().top }, 1000);
     });
 });
 
