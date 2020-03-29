@@ -17,6 +17,6 @@ app.use(productRouter)
 
 
 app.get("/",(req,res)=>{
-    res.end("Hi");
+    res.status(200).json({"staus": "I am alive!"});
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

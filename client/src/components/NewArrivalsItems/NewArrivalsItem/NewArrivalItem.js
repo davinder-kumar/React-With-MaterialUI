@@ -24,16 +24,7 @@ const newArrivalItem = (props) => {
                     <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                         <form action="#" method="post">
                             <fieldset>
-                                <input type="hidden" name="cmd" value="_cart" />
-                                <input type="hidden" name="add" value="1" />
-                                <input type="hidden" name="business" value=" " />
-                                <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                <input type="hidden" name="amount" value="30.99" />
-                                <input type="hidden" name="discount_amount" value="1.00" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="return" value=" " />
-                                <input type="hidden" name="cancel_return" value=" " />
-                                <input type="submit" name="submit" value="Add to cart" className="button" />
+                                <input onClick={props.addToCart} type="submit" name="submit" value="Add to cart" className="button" />
                             </fieldset>
                         </form>
                     </div>

@@ -1,4 +1,4 @@
-import * as actionTypes from '../../redux-store/actionTypes'
+import * as actionTypes from '../../../redux-store/actionTypes'
 
 const initialState = {
     loading: false,

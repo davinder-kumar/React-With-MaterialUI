@@ -2,17 +2,31 @@ import React from 'react'
 import { Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import routes from '../../../routes'
+import { isLoggedIn } from '../../../Utilities/Utilities'
+import classes from './Header.module.css'
 const header = () => {
     return (<>
         <div className="header" id="home">
             <div className="container">
                 <ul>
-                    <li>
-                        <Link to={routes.signin} ><i className="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </Link>
-                    </li>
-                    <li>
-                        <Link to={routes.signup} ><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up  </Link>
-                    </li>
+                    {
+                        isLoggedIn()
+                            ? <li>
+                                <Link to={routes.logout} ><i className="fa fa-unlock-alt" aria-hidden="true"></i> Logout </Link>
+                            </li>
+                            :
+                            (<>
+                                <li>
+                                    <Link to={routes.signin} ><i className="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </Link>
+                                </li>
+                                <li>
+                                    <Link to={routes.signup} ><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up  </Link>
+                                </li>
+                            </>
+                            )
+
+                    }
+
                     <li><i className="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
                     <li><i className="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
                 </ul>
@@ -153,8 +167,13 @@ const header = () => {
                         <form action="/" method="post" className="last">
                             <input type="hidden" name="cmd" value="_cart" />
                             <input type="hidden" name="display" value="1" />
-                            <button className="w3view-cart" type="submit" name="submit" value="">
-                                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                            {/* <button className="w3view-cart" type="submit" name="submit" value="">
+                                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i></button> */}
+ 
+                                <Link className={classes.w3viewCart} to={routes.cart}>
+                                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                </Link>
+
                         </form>
 
                     </div>

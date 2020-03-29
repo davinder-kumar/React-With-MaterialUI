@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from '../../components/Copyright/Copyright'
 import { Link, Redirect } from 'react-router-dom'
-import axios from '../../axios-auth'
+import axios from '../../axios-api'
 import { routes } from '../../routes'
 import { updateObject } from '../../Utilities/Utilities'
 import withErrorHoc from '../../hoc/withErrorHoc/withErrorHoc'

@@ -1,8 +1,21 @@
-import React from 'react'
-import NewArrivals from '../../components/NewArrivals/NewArrivals'
+import React, { useEffect } from 'react'
+import NewArrivals from '../../components/NewArrivalsItems/NewArrivalsItems'
 import Coupons from '../../components/Coupons/Coupons'
-const Homepage = () => {
+import axios from '../../axios-api'
+import withError from '../../hoc/withErrorHoc/withErrorHoc'
+import * as actionsList from '../../redux-store/actionsList'
+import { connect } from 'react-redux'
+const Homepage = (props) => {
+    const { onSetNewArrivals } = props;
+
+    useEffect(() => {
+        // setTimeout(() => {
+            onSetNewArrivals()
+        // }, 5000);
+        
+    }, [onSetNewArrivals])
     return (
+
         <div>
             <div className="banner_bottom_agile_info">
                 <div className="container">
@@ -29,8 +42,6 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-
-
             <div className="schedule-bottom">
                 <div className="col-md-6 agileinfo_schedule_bottom_left">
                     <img src={require("../../assets/images/mid.jpg")} alt=" " className="img-responsive" />
@@ -60,10 +71,6 @@ const Homepage = () => {
                 </div>
                 <div className="clearfix"> </div>
             </div>
-
-
-
-
             <div className="banner-bootom-w3-agileits">
                 <div className="container">
                     <h3 className="wthree_text_info">What's <span>Trending</span></h3>
@@ -108,23 +115,16 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-
-
             <div className="agile_last_double_sectionw3ls">
                 <div className="col-md-6 multi-gd-img multi-gd-text ">
                     <a href="womens.html"><img src={require("../../assets/images/bot_1.jpg")} alt=" " /><h4>Flat <span>50%</span> offer</h4></a>
-
-
                 </div>
                 <div className="col-md-6 multi-gd-img multi-gd-text ">
                     <a href="womens.html"><img src={require("../../assets/images/bot_2.jpg")} alt=" " /><h4>Flat <span>50%</span> offer</h4></a>
                 </div>
                 <div className="clearfix"></div>
             </div>
-
-            <NewArrivals />
-
-
+            <NewArrivals products={props.newArrivals} isError={props.isError} loading={props.loading} />
             <div className="sale-w3ls">
                 <div className="container">
                     <h6>We Offer Flat <span>40%</span> Discount</h6>
@@ -133,9 +133,23 @@ const Homepage = () => {
                 </div>
             </div>
             <Coupons />
-
         </div>
-
     )
 }
-export default Homepage
+
+const mapStateToProps = (state) => {
+    return {
+        newArrivals: state.homepage.newArrivals,
+        loading: state.homepage.loading,
+        isError: state.homepage.isError
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSetNewArrivals: () => {
+            dispatch(actionsList.setNewArrivals())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withError(Homepage, axios))

@@ -1,7 +1,23 @@
 import React from 'react'
 import NewArrivalItem from './NewArrivalsItem/NewArrivalItem'
-
+import Spinner from '../UI/Loader/Loader'
 const newArrivals = (props) => {
+    // console.log(props.products)
+    let newArrivalsContent = null
+    if (props.loading) {
+        newArrivalsContent = <Spinner />
+    }
+    if (props.products.length) {
+        newArrivalsContent = props.products.map((product, index) => {
+            return <NewArrivalItem key={index} image={product.image} />
+        })
+    }
+
+    if(props.isError){
+        newArrivalsContent = <p>Items can't loaded</p>
+    }
+
+
     return (
         <div className="new_arrivals_agile_w3ls_info">
             <div className="container">
@@ -15,15 +31,7 @@ const newArrivals = (props) => {
                     </ul>
                     <div className="resp-tabs-container">
                         <div className="tab1">
-                            <NewArrivalItem image="m1.jpg" />
-                            <NewArrivalItem image="m2.jpg" />
-                            <NewArrivalItem image="m3.jpg" />
-                            <NewArrivalItem image="m4.jpg" />
-                            <NewArrivalItem image="m5.jpg" />
-                            <NewArrivalItem image="m6.jpg" />
-                            <NewArrivalItem image="m7.jpg" />
-                            <NewArrivalItem image="m8.jpg" />
-
+                            {newArrivalsContent}
                         </div>
                         <div className="clearfix"></div>
                     </div>

@@ -20,7 +20,7 @@ import { connect } from 'react-redux'
 import { routes } from '../../routes'
 import * as actionsList from '../../redux-store/actionsList'
 import withErrorHoc from '../../hoc/withErrorHoc/withErrorHoc'
-import axios from '../../axios-auth'
+import axios from '../../axios-api'
 const SignIn = (props) => {
   const [formData, setFormData] = useState({
     email: {

@@ -6,29 +6,30 @@ import { BrowserRouter } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import AuthReducer from './containers/Auth/auth-reducer'
+import AuthReducer from './containers/Auth/Redux/auth-reducer'
+import HomepageReducer from './containers/Homepage/Redux/homepage-reducer'
 import createSagaMiddleware from 'redux-saga'
 import './assets/css/bootstrap.css'
-
 import './assets/css/font-awesome.css'
 import './assets/css/easy-responsive-tabs.css'
-// import 'bootstrap'
 import './assets/js/global'
 import './assets/css/style.css'
 
-import authSagaWatcher from './containers/Auth/auth-saga-watcher'
+import rootSagaWatcher from './redux-store/sagasWatcher'
+
 const rootReducer = combineReducers({
-    auth : AuthReducer
+    auth: AuthReducer,
+    homepage: HomepageReducer
 })
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer,
+export const store = createStore(rootReducer,
     composeEnhancers(applyMiddleware(sagaMiddleware))
 )
-sagaMiddleware.run(authSagaWatcher)
+sagaMiddleware.run(rootSagaWatcher)
 const app = (
     <Provider store={store}>
-        <BrowserRouter basename="shopping-cart">
+        <BrowserRouter>
             <App />
         </BrowserRouter>
     </Provider>);

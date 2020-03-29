@@ -98,8 +98,8 @@ const footer = () => {
                         </div>
                         <div className="col-sm-6 newsright">
                             <form action="/" method="post">
-                                <input type="email" placeholder="Enter your email..." name="email" required="" />
-                                <input type="submit" value="Submit" />
+                                <input onChange={() => {}} type="email" placeholder="Enter your email..." name="email" required="" />
+                                <input onChange={() => {}} type="submit" value="Submit" />
                             </form>
                         </div>
 
@@ -109,7 +109,7 @@ const footer = () => {
                 </div>
             </div>
 
-            <div className="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div className="modal fade" id="myModal4" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content modal-info">
                         <div className="modal-header">
@@ -123,25 +123,26 @@ const footer = () => {
                                         <form>
                                             <div className="sign-up">
                                                 <h4>Email :</h4>
-                                                <input type="text" value="Type here" onFocus="this.value = '';" onBlur="if (this.value == '') {
-                                                this.value = 'Type here';
-                                            }" required="" />
+                                                <input
+                                                 type="text"
+                                                  value="Type here"
+                                                  onChange={()=>{}}
+                                             required="" />
                                             </div>
                                             <div className="sign-up">
                                                 <h4>Password :</h4>
-                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
-                                                this.value = 'Password';}" required="" />
+                                                <input type="password" value="Password" 
+                                                  required=""  onChange={() => {}} />
 
                                             </div>
                                             <div className="sign-up">
                                                 <h4>Re-type Password :</h4>
-                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
-                                                this.value = 'Password';
-                                            }" required="" />
+                                                <input type="password" value="Password" 
+                                                 required=""  onChange={() => {}} />
 
                                             </div>
                                             <div className="sign-up">
-                                                <input type="submit" value="REGISTER NOW" />
+                                                <input type="submit" value="REGISTER NOW"  onChange={() => {}} />
                                             </div>
 
                                         </form>
@@ -151,20 +152,20 @@ const footer = () => {
                                         <form>
                                             <div className="sign-in">
                                                 <h4>Email :</h4>
-                                                <input type="text" value="Type here" onFocus="this.value = '';" onBlur="if (this.value == '') {
-                                                this.value = 'Type here';
-                                            }" required="" />
+                                                <input type="text" value="Type here"
+                                                  onChange={() => {}}
+                                                 required="" />
                                             </div>
                                             <div className="sign-in">
                                                 <h4>Password :</h4>
-                                                <input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {
-                                                this.value = 'Password';
-                                            }" required="" />
+                                                <input type="password" value="Password" 
+                                                 onChange={() => {}}
+                                                 required="" />
                                                 <a href="/">Forgot password?</a>
                                             </div>
                                             <div className="single-bottom">
-                                                <input type="checkbox" id="brand" value="" />
-                                                <label for="brand"><span></span>Remember Me.</label>
+                                                <input type="checkbox" id="brand" value=""  />
+                                                <label htmlFor="brand"><span></span>Remember Me.</label>
                                             </div>
                                             <div className="sign-in">
                                                 <input type="submit" value="SIGNIN" />

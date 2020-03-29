@@ -1,6 +1,6 @@
 import { put } from 'redux-saga/effects'
-import axios from '../../axios-auth'
-import * as actionList from '../../redux-store/actionsList'
+import axios from '../../../axios-api'
+import * as actionList from '../../../redux-store/actionsList'
 export function* authSignup(action) {
     try {
         yield axios.post('/users', action.formData);

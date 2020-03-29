@@ -1,13 +1,16 @@
 import React from 'react';
 import Signin from './containers/Auth/SignIn'
 import Signup from './containers/Auth/Signup'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionList from './redux-store/actionsList'
 import Homepage from './containers/Homepage/Homepage'
 import Layout from './hoc/Layout/Layout'
+import routes from './routes';
+import Cart from './containers/Cart/Cart'
 const App = (props) => {
   //try to auto login
+  console.log(props)
   if (localStorage.getItem("token") !== null && localStorage.getItem("userId") !== null) {
     props.autoAuthLogin(localStorage.getItem("token"), localStorage.getItem("userId"))
   }
@@ -15,14 +18,15 @@ const App = (props) => {
     <div>
       <React.StrictMode>
         <Switch>
-          <Route path="/signin" component={Signin} />
-          <Route path="/signup" component={Signup} />
+          <Route exact path={routes.signin} component={Signin} />
+          <Route exact path={routes.signup} component={Signup} />
           {/* Layout only for frontend routes */}
           <Layout>
-            <Route path="/" component={Homepage} />
+            <Route exact path={routes.home} component={Homepage} />
+            <Route exact path={routes.cart} component={Cart} />
+            <Redirect to={routes.home } />
           </Layout>
 
-          <Redirect to="/signin" />
         </Switch>
       </React.StrictMode>
     </div>
@@ -35,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(withRouter(App));
