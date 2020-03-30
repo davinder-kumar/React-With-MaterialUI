@@ -14,7 +14,7 @@ import './assets/css/font-awesome.css'
 import './assets/css/easy-responsive-tabs.css'
 import './assets/js/global'
 import './assets/css/style.css'
-import cartReducer from ''
+// import cartReducer from ''
 
 import rootSagaWatcher from './redux-store/sagasWatcher'
 
